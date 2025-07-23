@@ -2,17 +2,78 @@
 
 // Exemplo: Mostrar mensagem no console
 console.log('Olá, mundo!');
+console.error('Olá, mundo!');
+console.warn('Olá, mundo!');
+console.info('Olá, mundo!');
+
 
 // Exemplo: Declarando variáveis
 const nome = 'Maria';
 let idade = 20;
 const estudante = true;
-console.log(nome, idade, estudante);
+var cidade = 'São Paulo';
+console.log(nome, idade, estudante, cidade);
 
 // Exemplo: Operações matemáticas
-const a = 5;
+const a = 1;
 const b = 3;
-console.log('Soma:', a + b);
+console.log('Soma:', (a + b));
+
+if (a > b) {
+  console.log(`${a} é maior que ${b}`);
+} else if (a < b) {
+    console.log(`${a} é menor que ${b}`);
+    } else {
+    console.log(`${a} é igual a ${b}`);
+}
+
+switch (a) {
+  case 1:
+    console.log('A is 1');
+    break;
+  case 2:    
+    console.log('A is 2');    
+    break;    
+  default:
+    console.log('A is not 1 or 2');    
+}
+   
+
+// Exemplo: Laços de repetição
+for (var i = 0; i < 5; i++) {    
+    console.log(i);    
+}
+
+var meu_array = ['a', 'b', 'c'];
+meu_array.forEach(function(item) {
+    if (item === 'b') {
+        console.log('Encontrado:', item);
+    }  
+    console.log('Item:', item);
+});
+
+// Exemplo: Funções
+function saudacao(nome) {
+    return `Olá, ${nome}!`;
+}
+console.log(saudacao('João'));
+
+// Exemplo: Função anônima
+const saudacaoAnonima = function(nome) {
+    return `Olá, ${nome}!`;
+};
+console.log(saudacaoAnonima('Maria'));
+
+// Exemplo: Arrow function
+const saudacaoArrow = (nome) => `Olá, ${nome}!`;
+console.log(saudacaoArrow('Pedro'));
+
+function imprimeNome(nome) {
+    console.log("Olá, " + nome + "!");
+}
+imprimeNome(function(nome) {
+        return nome.toLowerCase().trim();
+    }(" JOÃO     "));
 
 // Exercício 1
 // (Altere o texto abaixo para testar)

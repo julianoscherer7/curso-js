@@ -6,13 +6,17 @@ const saudacao = nome => `Olá, ${nome}!`;
 console.log(saudacao('Ana'));
 
 // Exemplo: Função para verificar paridade
-const ehPar = n => n % 2 === 0;
+const ehPar = n => n % 2 == 0;
 console.log('4 é par?', ehPar(4));
+function somar(x, y) {
+  return x + y;   
+}
 
 // Exemplo: Usando função importada da aula 01
 // Copie a função somar(x, y) da aula anterior aqui se necessário
 // const somar = (x, y) => x + y;
-console.log('Soma:', somar(2, 3));
+//console.log('Soma:', somar(Number(prompt('Digite o primeiro número:')), Number( prompt('Digite o segundo número:'))));
+console.log(Number('1') + 2);
 
 // Exercício 1
 // Crie uma função que recebe um nome e retorna uma saudação
