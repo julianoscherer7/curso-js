@@ -1,0 +1,57 @@
+/*
+  Estilize aqui: cores, fontes, layout, animações básicas.
+  Dica: use Google Fonts para títulos e textos.
+*/
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+body {
+  font-family: 'Roboto', Arial, sans-serif;
+  background: #f7f7f7;
+  color: #222;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background: #4f8cff;
+  color: #fff;
+  padding: 2rem 1rem;
+  text-align: center;
+}
+
+main {
+  margin: 2rem auto;
+  max-width: 600px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  padding: 2rem;
+  transition: box-shadow 0.3s;
+}
+
+main:hover {
+  box-shadow: 0 4px 16px rgba(79,140,255,0.15);
+}
+
+button {
+  background: #4f8cff;
+  color: #fff;
+  border: none;
+  padding: 0.5rem 1.2rem;
+  border-radius: 4px;
+  cursor: pointer;
+  margin: 0.5rem 0;
+  transition: background 0.2s;
+}
+button:hover {
+  background: #2563c9;
+}
+
+input {
+  padding: 0.4rem;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  margin-right: 0.5rem;
+}
+
+/* Adicione mais estilos conforme desejar */
