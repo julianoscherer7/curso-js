@@ -16,6 +16,78 @@ Nesta aula, vamos reutilizar:
 ## Recapitulação da aula anterior
 - Funções utilitárias para saudação, soma, paridade, maior número e voto.
 
+
+ Principais tipos de eventos que podem ser usados com addEventListener
+🖱️ Eventos de Mouse
+Evento	Descrição
+click	Clique com botão principal
+dblclick	Clique duplo
+mousedown	Pressionar botão do mouse
+mouseup	Soltar botão do mouse
+mousemove	Movimento do mouse
+mouseenter	Mouse entra no elemento (sem bubble)
+mouseleave	Mouse sai do elemento (sem bubble)
+mouseover	Mouse entra (com bubble)
+mouseout	Mouse sai (com bubble)
+contextmenu	Clique com botão direito
+wheel	Roda do mouse
+
+⌨️ Eventos de Teclado
+Evento	Descrição
+keydown	Tecla pressionada
+keyup	Tecla solta
+keypress	Tecla pressionada (obsoleto)
+
+📄 Eventos de Formulário
+Evento	Descrição
+submit	Formulário enviado
+change	Valor de <input>, <select> etc. mudou
+input	Qualquer mudança em campos de texto
+focus	Elemento recebe foco
+blur	Elemento perde o foco
+reset	Formulário resetado
+invalid	Campo inválido
+
+🌐 Eventos de Janela (Window)
+Evento	Descrição
+load	Página completamente carregada
+resize	Janela redimensionada
+scroll	Scroll na página ou elemento
+unload	Página sendo descarregada (obsoleto)
+beforeunload	Antes da página ser descarregada
+error	Erro de carregamento
+
+📦 Eventos de Drag and Drop
+Evento	Descrição
+drag	Enquanto arrasta
+dragstart	Início do arraste
+dragend	Fim do arraste
+dragenter	Arrastando entra em área
+dragover	Enquanto está sobre área
+dragleave	Sai da área de drop
+drop	Solta o item na área
+
+📦 Eventos de Clipboard
+Evento	Descrição
+copy	Quando algo é copiado
+cut	Quando algo é cortado
+paste	Quando algo é colado
+
+📱 Eventos de Touch (para dispositivos móveis)
+Evento	Descrição
+touchstart	Dedo toca na tela
+touchmove	Dedo desliza na tela
+touchend	Dedo sai da tela
+touchcancel	Interrupção do toque
+
+🧠 Outros eventos úteis
+Evento	Descrição
+animationstart	Animação CSS começou
+animationend	Animação CSS terminou
+transitionend	Transição CSS terminou
+DOMContentLoaded	HTML foi completamente carregado
+visibilitychange	Aba ficou visível ou oculta
+
 ## Exercícios guiados
 
 ### Exercício 1

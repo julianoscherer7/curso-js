@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demonstração Completa de Eventos DOM</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- Header Fixo -->
+    <header class="fixed-top bg-primary text-white">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="#">🎯 Eventos DOM Demo</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#intro">Início</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Seções
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="#forms">Formulários</a></li>
+                                <li><a class="dropdown-item" href="#media">Mídia</a></li>
+                                <li><a class="dropdown-item" href="#drag-drop">Drag & Drop</a></li>
+                                <li><a class="dropdown-item" href="#game-quiz">Game/Quiz</a></li>
+                                <li><a class="dropdown-item" href="#history-nav">Navegação</a></li>
+                                <li><a class="dropdown-item" href="#advanced">Avançados</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <div class="container">
+            <div id="window-dimensions" class="text-end small py-1">Largura: --px, Altura: --px</div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container-fluid" style="margin-top: 120px; margin-bottom: 300px;">
+        
+        <!-- Seção de Introdução -->
+        <section id="intro" class="container my-5">
+            <div class="row">
+                <div class="col-12">
+                    <div class="jumbotron bg-light p-5 rounded">
+                        <h1 class="display-4">Demonstração Completa de Eventos DOM</h1>
+                        <p class="lead">Esta página demonstra o uso abrangente de eventos nativos do DOM, incluindo eventos de mouse, teclado, formulário, mídia, drag & drop, toque, animação, transição, histórico e muito mais.</p>
+                        <hr class="my-4">
+                        <p>Todos os eventos são capturados e registrados no painel de logs no rodapé da página. Explore as diferentes seções para ver os eventos em ação!</p>
+                        <button id="startDemo" class="btn btn-primary btn-lg">Iniciar Demonstração</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção de Formulários -->
+        <section id="forms" class="container my-5">
+            <h2 class="mb-4">📝 Formulários Complexos</h2>
+            <div class="row">
+                <div class="col-md-8">
+                    <form id="registrationForm" class="needs-validation" novalidate>
+                        <div class="mb-3">
+                            <label for="fullName" class="form-label">Nome Completo:</label>
+                            <input type="text" class="form-control" id="fullName" name="fullName" required>
+                            <div class="invalid-feedback">Por favor, insira seu nome completo.</div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="userEmail" class="form-label">Email:</label>
+                            <input type="email" class="form-control" id="userEmail" name="userEmail" required>
+                            <div class="invalid-feedback">Por favor, insira um email válido.</div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="userPassword" class="form-label">Senha:</label>
+                            <input type="password" class="form-control" id="userPassword" name="userPassword" required minlength="6">
+                            <div class="invalid-feedback">A senha deve ter pelo menos 6 caracteres.</div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="country" class="form-label">País:</label>
+                            <select class="form-select" id="country" name="country" required>
+                                <option value="">Selecione...</option>
+                                <option value="br">Brasil</option>
+                                <option value="us">Estados Unidos</option>
+                                <option value="ca">Canadá</option>
+                                <option value="uk">Reino Unido</option>
+                            </select>
+                            <div class="invalid-feedback">Por favor, selecione um país.</div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="comments" class="form-label">Comentários:</label>
+                            <textarea class="form-control" id="comments" name="comments" rows="3"></textarea>
+                        </div>
+                        <div class="mb-3 form-check">
+                            <input type="checkbox" class="form-check-input" id="agreeTerms" name="agreeTerms" required>
+                            <label class="form-check-label" for="agreeTerms">Concordo com os termos de uso</label>
+                            <div class="invalid-feedback">Você deve concordar com os termos.</div>
+                        </div>
+                        <button type="submit" class="btn btn-primary me-2">Registrar</button>
+                        <button type="reset" class="btn btn-secondary">Limpar</button>
+                    </form>
+                </div>
+                <div class="col-md-4">
+                    <details class="mt-4">
+                        <summary class="btn btn-outline-info">Termos de Uso</summary>
+                        <div class="mt-3 p-3 border rounded">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                            <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                        </div>
+                    </details>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção de Mídia -->
+        <section id="media" class="container my-5">
+            <h2 class="mb-4">🎬 Galeria de Mídia</h2>
+            <div class="row">
+                <div class="col-md-6">
+                    <h5>Vídeo Exemplo</h5>
+                    <video id="videoPlayer" controls class="w-100" style="max-height: 300px;">
+                        <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+                        <track kind="captions" src="assets/video/captions.vtt" srclang="pt" label="Português">
+                        Seu navegador não suporta o elemento de vídeo.
+                    </video>
+                </div>
+                <div class="col-md-6">
+                    <h5>Áudio Exemplo</h5>
+                    <audio id="audioPlayer" controls class="w-100">
+                        <source src="https://www.soundjay.com/misc/sounds/bell-ringing-05.wav" type="audio/wav">
+                        Seu navegador não suporta o elemento de áudio.
+                    </audio>
+                    <div class="mt-3">
+                        <p><strong>Controles de Mídia:</strong></p>
+                        <button id="playBtn" class="btn btn-success btn-sm">Play</button>
+                        <button id="pauseBtn" class="btn btn-warning btn-sm">Pause</button>
+                        <button id="stopBtn" class="btn btn-danger btn-sm">Stop</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção de Drag & Drop -->
+        <section id="drag-drop" class="container my-5">
+            <h2 class="mb-4">🎯 Drag & Drop e Conteúdo Editável</h2>
+            <div class="row">
+                <div class="col-md-6">
+                    <h5>Área de Upload</h5>
+                    <div id="drop-zone" class="border border-dashed border-3 p-5 text-center rounded">
+                        <i class="fas fa-cloud-upload-alt fa-3x text-muted mb-3"></i>
+                        <p class="text-muted">Arraste e solte arquivos aqui para upload</p>
+                        <small class="text-muted">Ou clique para selecionar arquivos</small>
+                        <input type="file" id="fileInput" multiple style="display: none;">
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <h5>Conteúdo Editável</h5>
+                    <div id="editable-content" contenteditable="true" class="border p-3 rounded" style="min-height: 150px;">
+                        <p>Clique aqui para editar este texto. Você pode usar <strong>Ctrl+C</strong>, <strong>Ctrl+V</strong>, <strong>Ctrl+X</strong> para copiar, colar e recortar.</p>
+                        <p>Selecione o texto para ver os eventos de seleção em ação!</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção de Game/Quiz -->
+        <section id="game-quiz" class="container my-5">
+            <h2 class="mb-4">🎮 Game/Quiz Interativo</h2>
+            <div class="row">
+                <div class="col-12">
+                    <div id="game-area" class="border border-2 p-5 text-center rounded bg-light" style="min-height: 300px;">
+                        <h4>Mini-Game de Cliques</h4>
+                        <p>Use o mouse, teclado ou toque para interagir!</p>
+                        <div id="game-score" class="mb-3">Pontuação: <span id="score">0</span></div>
+                        <button id="gameButton" class="btn btn-success btn-lg">Iniciar Jogo</button>
+                        <div id="game-targets" class="mt-4"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção de Navegação e Histórico -->
+        <section id="history-nav" class="container my-5">
+            <h2 class="mb-4">🧭 Navegação e Histórico</h2>
+            <div class="row">
+                <div class="col-12">
+                    <nav class="mb-3">
+                        <a href="#" class="btn btn-outline-primary me-2 nav-link-custom" data-path="/home">Home</a>
+                        <a href="#" class="btn btn-outline-primary me-2 nav-link-custom" data-path="/about">Sobre</a>
+                        <a href="#" class="btn btn-outline-primary me-2 nav-link-custom" data-path="/contact">Contato</a>
+                        <a href="#" class="btn btn-outline-primary me-2 nav-link-custom" data-path="/services">Serviços</a>
+                    </nav>
+                    <div id="content-area" class="border p-4 rounded bg-light" style="min-height: 200px;">
+                        Conteúdo da seção será carregado aqui dinamicamente.
+                    </div>
+                    <div class="mt-3">
+                        <small class="text-muted">Status de Conectividade: <span id="connection-status" class="badge bg-success">Online</span></small>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção de Componentes Avançados -->
+        <section id="advanced" class="container my-5">
+            <h2 class="mb-4">⚡ Componentes Avançados</h2>
+            <div class="row">
+                <div class="col-md-6">
+                    <h5>Diálogo HTML5</h5>
+                    <button id="openDialogBtn" class="btn btn-info">Abrir Diálogo</button>
+                    <dialog id="myDialog" class="p-4 rounded border">
+                        <h5>Diálogo HTML Nativo</h5>
+                        <p>Este é um exemplo de diálogo usando o elemento &lt;dialog&gt; nativo do HTML5.</p>
+                        <button id="closeDialogBtn" class="btn btn-secondary">Fechar</button>
+                    </dialog>
+                </div>
+                <div class="col-md-6">
+                    <h5>Gráfico de Progresso</h5>
+                    <canvas id="myChart" width="400" height="200" class="border rounded"></canvas>
+                    <div class="mt-2">
+                        <button id="startProgress" class="btn btn-primary btn-sm">Iniciar Progresso</button>
+                        <button id="stopProgress" class="btn btn-danger btn-sm">Parar</button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Web Component -->
+            <div class="mt-4">
+                <h5>Web Component Customizado</h5>
+                <my-component>
+                    <span slot="component-header">Meu Componente Personalizado</span>
+                    <p>Este é o conteúdo principal do meu Web Component com slots.</p>
+                </my-component>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Modal de Boas-vindas -->
+    <div id="welcomeModal" class="modal fade" tabindex="-1" aria-labelledby="welcomeModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="welcomeModalLabel">🎉 Bem-vindo!</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Esta página demonstra o uso abrangente de eventos DOM nativos.</p>
+                    <div class="animated-element bg-primary rounded" style="height: 50px; animation: pulse 2s infinite;"></div>
+                    <p class="mt-3">Explore as diferentes seções e observe os eventos sendo registrados no painel de logs!</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Começar Exploração</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer Fixo com Painel de Logs -->
+    <footer class="fixed-bottom bg-dark text-white">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12">
+                    <div class="d-flex justify-content-between align-items-center py-2">
+                        <h6 class="mb-0">📊 Painel de Logs</h6>
+                        <button id="clearLogs" class="btn btn-outline-light btn-sm">Limpar Logs</button>
+                    </div>
+                    <div class="log-filters mb-2">
+                        <button class="btn btn-sm btn-primary active" data-filter="all">Todos</button>
+                        <button class="btn btn-sm btn-outline-light" data-filter="mouse">Mouse</button>
+                        <button class="btn btn-sm btn-outline-light" data-filter="keyboard">Teclado</button>
+                        <button class="btn btn-sm btn-outline-light" data-filter="form">Formulário</button>
+                        <button class="btn btn-sm btn-outline-light" data-filter="media">Mídia</button>
+                        <button class="btn btn-sm btn-outline-light" data-filter="dragdrop">Drag&Drop</button>
+                        <button class="btn btn-sm btn-outline-light" data-filter="touch">Toque</button>
+                        <button class="btn btn-sm btn-outline-light" data-filter="animation">Animação</button>
+                        <button class="btn btn-sm btn-outline-light" data-filter="transition">Transição</button>
+                        <button class="btn btn-sm btn-outline-light" data-filter="history">Histórico</button>
+                        <button class="btn btn-sm btn-outline-light" data-filter="other">Outros</button>
+                    </div>
+                    <div id="log-panel" class="bg-black text-light p-2 rounded" style="height: 150px; overflow-y: auto; font-family: 'Courier New', monospace; font-size: 12px;">
+                        <!-- Logs serão inseridos aqui via JavaScript -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Template para Web Component -->
+    <template id="my-component-template">
+        <style>
+            :host {
+                display: block;
+                border: 2px solid #007bff;
+                border-radius: 8px;
+                padding: 15px;
+                margin: 10px 0;
+                background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            }
+            .header {
+                font-weight: bold;
+                color: #007bff;
+                margin-bottom: 10px;
+                font-size: 1.2em;
+            }
+            .content {
+                color: #495057;
+            }
+        </style>
+        <div class="header">
+            <slot name="component-header">Cabeçalho Padrão</slot>
+        </div>
+        <div class="content">
+            <slot>Conteúdo Padrão</slot>
+        </div>
+    </template>
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
+

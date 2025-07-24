@@ -3,16 +3,31 @@
 
 // Exemplo: Selecionando elementos e manipulando texto
 const main = document.querySelector('main');
+/* const main = document.getElementById('main');
+const main = document.getElementsByClassName('principal')[0];
+const main = document.getElementsByName('principal')[0];
+const main = document.getElementsByTagName('div'); */
 
 // Exemplo: Criando um botão e adicionando evento
 const btnSaudacao = document.createElement('button');
 btnSaudacao.textContent = 'Mostrar Saudação';
+btnSaudacao.id = 'btnSaudacao';
+btnSaudacao.className = 'btn-saudacao';
+btnSaudacao.name = 'btnSaudacao';
+btnSaudacao.style.backgroundColor = '#4CAF50';
+btnSaudacao.style.color = '#fff';
+btnSaudacao.style.padding = '10px 20px';
+btnSaudacao.dataset.minha_propriedade = 'valorExemplo';
+btnSaudacao.setAttribute('title', 'Clique para ver a saudação');
 main.appendChild(btnSaudacao);
+
 
 btnSaudacao.addEventListener('click', () => {
   main.append('Olá, bem-vindo ao DOM!');
 });
-
+main.addEventListener('click', (event) => {
+    alert('Você clicou no botão main!');
+});
 // Exercício 1
 // Botão que mostra saudação usando função da aula anterior
 const btnSaudacao2 = document.createElement('button');
