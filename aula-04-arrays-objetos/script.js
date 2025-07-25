@@ -5,13 +5,30 @@
 const main = document.querySelector('main');
 
 const frutas = ['Maçã', 'Banana', 'Laranja'];
+frutas.push('Uva'); // Adicionando uma fruta
+frutas.pop(); // Removendo a última fruta
+frutas.shift(); // Removendo a primeira fruta
+frutas.unshift('Morango'); // Adicionando uma fruta no início
+frutas.sort(); // Ordenando as frutas
+frutas.reverse(); // Invertendo a ordem das frutas
+//frutas.splice(2, 3); // Removendo a fruta no índice 1
 main.append(`Frutas: ${frutas.join(', ')}`);
 
 // Exemplo: Objeto simples
 const pessoa = { nome: 'Ana', idade: 22 };
 main.append(document.createElement('br'));
+pessoa.cidade = 'São Paulo'; // Adicionando uma nova propriedade
 main.append(`Pessoa: ${pessoa.nome}, ${pessoa.idade} anos`);
 
+frutas.forEach(element => {
+  main.append(` Frutas: ${element}`);
+main.append(document.createElement('br'));});
+
+for (let index = 0; index < frutas.length; index++) {
+  const element = frutas[index];
+  main.append(` Frutas: ${element}`);
+  main.append(document.createElement('br'));
+}
 // Exercício 1
 // Adicione uma fruta ao array e mostre o novo array
 const inputFruta = document.createElement('input');
