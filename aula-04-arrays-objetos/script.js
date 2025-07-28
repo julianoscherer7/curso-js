@@ -27,7 +27,7 @@ main.append(document.createElement('br'));});
 for (let index = 0; index < frutas.length; index++) {
   const element = frutas[index];
   main.append(` Frutas: ${element}`);
-  main.append(document.createElement('br'));
+  main.append(docum ent.createElement('br'));
 }
 // Exercício 1
 // Adicione uma fruta ao array e mostre o novo array
