@@ -14,7 +14,7 @@ frutas.reverse(); // Invertendo a ordem das frutas
 //frutas.splice(2, 3); // Removendo a fruta no índice 1
 main.append(`Frutas: ${frutas.join(', ')}`);
 
-// Exemplo: Objeto simples
+// Exemplo: Objeto sitmples
 const pessoa = { nome: 'Ana', idade: 22 };
 main.append(document.createElement('br'));
 pessoa.cidade = 'São Paulo'; // Adicionando uma nova propriedade
@@ -26,7 +26,7 @@ main.append(document.createElement('br'));});
 
 for (let index = 0; index < frutas.length; index++) {
   const element = frutas[index];
-  main.append(` Frutas: ${element}`);
+  main.append(` Frutas: ${elemen}`);
   main.append(docum ent.createElement('br'));
 }
 // Exercício 1
