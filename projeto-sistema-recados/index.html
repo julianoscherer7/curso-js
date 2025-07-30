@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sistema de Recados</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+  <!-- Seu CSS personalizado (opcional) -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-light p-4">
+  <div class="container">
+    <h1 class="mb-4">Sistema de Recados</h1>
+
+    <form id="form-recado" class="mb-4">
+      <div class="mb-2">
+        <label for="quem" class="form-label">Quem deixou</label>
+        <input type="text" id="quem" class="form-control" required>
+      </div>
+      <div class="mb-2">
+        <label for="texto" class="form-label">Texto do Recado</label>
+        <textarea id="texto" class="form-control" required></textarea>
+      </div>
+      <div class="mb-2">
+        <label for="destinatario" class="form-label">Para quem</label>
+        <input type="text" id="destinatario" class="form-control" required>
+      </div>
+      <button type="submit" class="btn btn-primary">Salvar Recado</button>
+    </form>
+
+    <ul id="lista-recados" class="list-group"></ul>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
